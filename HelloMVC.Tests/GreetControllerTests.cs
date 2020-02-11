@@ -28,5 +28,16 @@ namespace HelloMVC.Tests
 
             Assert.IsType<GreetModel>(result.Model);
         }
+        [Fact]
+        public void Index_Sets_Name_On_Model()
+        {
+            var controller = new GreetController();
+            var expectedName = "ExampleString";
+
+            var result = controller.Index(expectedName);
+            var model = (GreetModel)result.Model;
+
+            Assert.Equal(expectedName, model.Name);
+        }
     }
 }
