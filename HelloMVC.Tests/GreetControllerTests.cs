@@ -1,22 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using HelloMVC.Controllers;
-using System;
-using Xunit;
 using Microsoft.AspNetCore.Mvc;
-
+using Xunit;
 
 namespace HelloMVC.Tests
 {
-    public class HomeControllerTests
+    public class GreetControllerTests
     {
         [Fact]
         public void Index_Returns_ViewResult()
         {
-            var controller = new HomeController();
+            var controller = new GreetController();
 
-            var result = controller.Index();
+            var result = controller.Index("ThisIsAString");
 
             Assert.IsType<ViewResult>(result);
         }
-  
     }
 }
