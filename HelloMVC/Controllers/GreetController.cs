@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HelloMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HelloMVC.Controllers
@@ -10,7 +11,8 @@ namespace HelloMVC.Controllers
     {
         public ViewResult Index(string name)
         {
-            return null;
+            var model = new GreetModel();
+            return View(model);
         }
     }
 }
